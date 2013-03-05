@@ -377,6 +377,10 @@ Change the listen parameter so that it reads:
 
     listen "127.0.0.1:3000"  # listen to port 3000 on the loopback interface
 
+Change the timeout value:
+
+    timeout 60
+    
 Also review the other settings to match your setup.
 
 ## Configure GitLab DB settings
