@@ -524,6 +524,26 @@ nobody can access your GitLab by using this login information later on.
 
 # Advanced Setup Tips
 
+## Setup SMTP Email
+
+To setup a custom SMTP email instead of using the default Sendmail, configure the 
+`config/enviroments/production.rb` file. 
+
+Comment out the following part by adding a # in front of it:
+
+    config.action_mailer.delivery_method = :sendmail
+    
+Add the following in the file:
+
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :user_name            => 'xxxx@example.com',
+    :password             => 'password',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
+
 ## Custom Redis Connection
 
 If you'd like Resque to connect to a Redis server on a non-standard port or on
